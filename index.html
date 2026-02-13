@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Nathan - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <div class="logo-box">
+                    <div class="logo-gradient"></div>
+                    <span class="logo-text">DN</span>
+                </div>
+            </div>
+            <p class="preloader-text" id="preloaderText">INITIALIZING SYSTEM...</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p class="progress-percent" id="progressPercent">0%</p>
+            <div class="glitch-bars">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cursor-main" id="cursorMain"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
+
+    <canvas id="starfield"></canvas>
+
+    <button class="lang-toggle" id="langToggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span id="langText">PT</span>
+    </button>
+
+    <button class="audio-toggle" id="audioToggle" title="Ativar/Desativar Som">
+        <svg id="audioIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path id="audioWaves" d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+    </button>
+
+    <main id="mainContent">
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <p class="hero-greeting fade-in-up" id="heroGreeting">Olá, eu sou</p>
+                <h1 class="hero-name fade-in-up" id="heroName">David Nathan</h1>
+                <h2 class="hero-title glitch-text fade-in-up" id="heroTitle">Data Analyst & Creative Developer</h2>
+                <p class="hero-subtitle fade-in-up" id="heroSubtitle">Decifrando o futuro através de dados e código</p>
+                <button class="hero-cta fade-in-up" id="heroCTA" onclick="scrollToSection('about')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 3v18m-4-4l4 4 4-4"></path>
+                    </svg>
+                    <span id="heroCtaText">Explorar Meu Universo</span>
+                </button>
+            </div>
+            <div class="scroll-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 3v18m-4-4l4 4 4-4"></path>
+                    </svg>
+                    <h2 id="aboutTitle">Sobre Mim</h2>
+                </div>
+                <div class="glass-card about-card">
+                    <div class="about-avatar">
+                    <div class="avatar-circle">
+                        <div class="about-avatar">
+                        <div class="avatar-circle">
+                            <img src="imagens/perfil.JPG" alt="Foto de David Nathan" class="profile-img">
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <p id="aboutDescription">Graduado em Análise e Desenvolvimento de Sistemas, atualmente em transição para o universo fascinante da Análise de Dados. Minha missão é transformar dados brutos em insights visuais que impulsionam decisões estratégicas. Combino habilidades técnicas com criatividade para criar experiências digitais que contam histórias através de números.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="tech-section">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-subtitle" id="techSubtitle">Arsenal Tecnológico</p>
+                    <h2 id="techTitle">Módulos de Habilidade</h2>
+                </div>
+                <div class="tech-grid" id="techGrid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-subtitle" id="projectsSubtitle">Explorando o Cosmos</p>
+                    <h2 id="projectsTitle">Projetos</h2>
+                </div>
+                <div class="projects-grid" id="projectsGrid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="contact" class="cv-section">
+            <div class="container">
+                <h2 id="cvTitle">Baixar Currículo</h2>
+                <div class="cv-button-wrapper">
+                    <button class="cv-button" id="cvButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span id="cvButtonText">Download CV</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <p class="cv-hint">Experimente passar o mouse sobre o botão</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <p class="footer-text">
+                    © 2025 David Nathan. <span id="footerRights">Todos os direitos reservados.</span>
+                </p>
+                <p class="footer-made">
+                    <span id="footerMade">Feito com</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    <span id="footerAnd">e</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                </p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
